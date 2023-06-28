@@ -1,0 +1,122 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease;
+  background-image: url("anime.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.light-overlay {
+  background-color: rgba(255, 255, 255, 0.8); /* Light mode overlay color */
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.9); /* Dark mode overlay color */
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #000; /* Default text color */
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #000; /* Default text color */
+}
+
+#countdown {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000; /* Default text color */
+}
+
+.dark-mode #countdown,
+.dark-mode p,
+.dark-mode h1 {
+  color: #fff; /* Dark mode text color */
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.toggle input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1f1f1f;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:checked + .slider {
+  background-color: #2196f3;
+}
+
+input[type="checkbox"]:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+#mode-label {
+  margin-left: 10px;
+}
+
+.logo {
+  filter: invert(0); /* Default logo color */
+}
+
+.dark-mode .logo {
+  filter: invert(1); /* Dark mode logo color */
+}
