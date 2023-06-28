@@ -3,7 +3,9 @@ const countdownElement = document.getElementById("countdown");
 // Fetch the remaining time from the server
 async function fetchCountdownTime() {
   try {
-    const response = await fetch("http://localhost:4000/api/v1/countdown");
+    const response = await fetch(
+      "https://api.beastmoodsee.com/api/v1/countdown"
+    );
     const data = await response.json();
     const { remainingTime } = data;
 
